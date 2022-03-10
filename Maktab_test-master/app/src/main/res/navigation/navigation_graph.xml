@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph.xml"
+    app:startDestination="@id/fragmentHome">
+
+    <fragment
+        android:id="@+id/fragmentHome"
+        android:name="com.example.newproject.ui.signup.FragmentHome"
+        android:label="FragmentHome"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_fragmentHome_to_uploadImage"
+            app:destination="@id/uploadImage" />
+        <action
+            android:id="@+id/action_fragmentHome_to_userFragment"
+            app:destination="@id/userFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/uploadImage"
+        android:name="com.example.newproject.ui.uploadimage.UploadImage"
+        android:label="UploadImage" >
+        <argument
+            android:name="userId"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/userFragment"
+        android:name="com.example.newproject.ui.users.UserFragment"
+        android:label="UserFragment" >
+        <action
+            android:id="@+id/action_userFragment_to_showInfo"
+            app:destination="@id/showInfo" />
+    </fragment>
+    <fragment
+        android:id="@+id/showInfo"
+        android:name="com.example.newproject.ui.showinfo.ShowInfo"
+        android:label="ShowInfo" >
+        <argument
+            android:name="id"
+            app:argType="string" />
+    </fragment>
+
+</navigation>
